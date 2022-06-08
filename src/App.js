@@ -25,6 +25,7 @@ import Categories from "./pages/Categories/Categories";
 // import ModalSignUp from "./components/ModalSignUp/ModalSignUp";
 import ModalLogIn from "./components/ModalLogIn/ModalLogIn";
 import Payment from "./pages/Purchase/Purchase";
+import Profile from "./pages/Profile/Profile.jsx";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ModalSignUp from "./components/ModalSignUp/ModalSignUp";
@@ -37,6 +38,9 @@ import ServicesDetail from "./pages/ServicesDetail";
 
 import { useSelector, useDispatch } from "react-redux";
 import ModalSignOut from "./components/ModalSignOut/ModalSignOut";
+import Confirm from "./pages/Confirm/Confirm";
+import LogInConfirm from "./pages/LogInConfirm/LogInConfirm";
+import Wishlist from "./pages/Wishlist/Wishlist";
 
 
 
@@ -98,7 +102,7 @@ function App() {
         />
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Switch>    
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Home}/>
           <Route exact path="/servicios/:id" component={Services} />
           <Route exact path="/categoria/:id" component={Categories} />
           <Route path="/worker/:id" component={WorkerProfile} />
@@ -106,10 +110,14 @@ function App() {
           <Route path="/publicar" component={PublishService} />
           <Route exact path="/admin" component={Admin} />
           <Route path="/posts/detail/:id" component={ServicesDetail}/>
+          <Route exact path="/profile/:id" component={Profile} />
           {/* <Elements stripe={stripePromise}>
             <CheckoutForm />
         </Elements> */}
           <Route path="/checkout" component={Payment}/>
+          <Route path="/confirmar/:id" component={Confirm} />
+          <Route path="/iniciar-sesion" component={LogInConfirm} />
+          <Route path="/lista-favoritos" component={Wishlist} />
         </Switch>
         <Footer />
         <ModalLogIn
