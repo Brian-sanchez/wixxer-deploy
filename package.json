@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://brian-sanchez.github.io/wixxer-deploy",
+  "homepage": "https://brian-sanchez.github.io",
   "private": true,
   "dependencies": {
     "@stripe/react-stripe-js": "^1.8.1",
